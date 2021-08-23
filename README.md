@@ -1,4 +1,4 @@
-# Backend Api Rest (Crediself)
+# Backend Api Rest (Gramafica)
 
 # Development
 
@@ -25,11 +25,9 @@ _Tener instalado Node Js en tu ordenador, puedes obtener desde el sitio oficial 
 _Para el desarrollo de esta api rest se utilizo las siguientes herramientas._
 
 - [Express js](https://expressjs.com/es/) - Framework web multi proposito.
-- [Jest](https://jestjs.io/) - Framework para pruebas unitarias.
 - [Jwt](https://jwt.io/) - Auth basado en token.
 - [TypeScript](https://www.typescriptlang.org/) - Tipado fuerte para javascript.
 - [MySql](https://www.mysql.com/) - Gestor de base de datos.
-- [Cloudinary](https://cloudinary.com/solutions/ecommerce_retail) - Nube de imagenes.
 
 ## Autores ✒️
 
