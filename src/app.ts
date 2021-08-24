@@ -25,7 +25,7 @@ app.use(function (_req, res, next) {
 });
 
 app.use('/static', express.static('public'));
-app.set('port', config.APP_PORT);
+app.set('port', config.PORT);
 
 app.use((req, res, next) => {
   if (req.originalUrl === '/api/webhooks/stripe' || req.originalUrl === '/api/v2/stripe/webhook') {
@@ -34,8 +34,6 @@ app.use((req, res, next) => {
     express.json()(req, res, next);
   }
 });
-
-export const App = app;
 
 app.use('/api', logger, [User]);
 
