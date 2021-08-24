@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import { User } from '../models/users';
+import { User } from '../models/user';
 import { config } from '../sql';
-import { getUserStorage } from '../sql/users';
+import { GetUsersStorage } from '../sql/users';
 
 declare module 'express-serve-static-core' {
   interface Request {
@@ -29,7 +29,7 @@ export const auth = async (req: Request, res: Response, next: NextFunction) => {
       if (err) {
         throw new Error('Please authenticate.');
       } else {
-        const user = await getUserStorage({ idUser: decoded.idUser });
+        const user = await GetUsersStorage({ idUser: decoded.idUser });
 
         if (!user.length) {
           throw new Error('No existe el usuario');

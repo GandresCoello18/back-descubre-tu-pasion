@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { logger } from './middlewares';
+import User from './services/users';
 
 import { config } from './sql';
 
@@ -8,7 +9,11 @@ const app = express();
 
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'http://localhost:8080'],
+    origin: [
+      'http://localhost:3000',
+      'http://localhost:8080',
+      'https://gamification-kappa.vercel.app',
+    ],
   }),
 );
 
@@ -32,7 +37,7 @@ app.use((req, res, next) => {
 
 export const App = app;
 
-app.use('/api', logger, []);
+app.use('/api', logger, [User]);
 
 app.listen(app.get('port'), () => {
   console.log(`🚀 Server ready at http://localhost:${app.get('port')}`);
