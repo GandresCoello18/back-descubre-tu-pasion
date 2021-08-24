@@ -3,12 +3,18 @@
   "version": "1.0.0",
   "description": "app gamafica tu carrera o descubre tu pasion",
   "main": "index.js",
+  "engines": {
+    "node": "16.x",
+    "npm": "6.x",
+    "yarn": "1.x"
+  },
   "scripts": {
-    "clean:modules": "rm -rf ./node_modules",
-    "clean": "rm -rf ./build",
-    "prebuild": "yarn clean",
     "build": "tsc",
     "dev": "tsc-watch --onSuccess \"node build/app.js\"",
+    "clean:modules": "rm -rf ./node_modules",
+    "clean": "rm -rf ./build",
+    "prebuild": "npm run clean",
+    "start": "tsc && node ./build/app.js",
     "dev:ts": "ts-node-dev --respawn src/app.ts",
     "format": "prettier --write \"src/**/*.ts\" --write \"package.json\"",
     "format:check": "prettier --check \"src/**/*.ts\" --check \"package.json\"",
